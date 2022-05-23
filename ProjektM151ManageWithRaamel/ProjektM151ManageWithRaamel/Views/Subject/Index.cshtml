@@ -1,0 +1,49 @@
+﻿@model List<ProjektM151ManageWithRaamel.Models.Subject>
+<h2>Fächer</h2>
+
+<fieldset>
+    <tr>
+        <div class="title">
+
+            List <hr />
+        </div>
+    </tr>
+    @foreach (ProjektM151ManageWithRaamel.Models.Subject subject in Model)
+    {
+        <div class="view">
+            <div class="beschreibung">
+                <tr>
+                    <td>
+                        Subject:
+                        @subject.Name
+                    </td>
+                    <td>
+                        |
+                        @Html.ActionLink("Homework", "ShowHomework", "Homework", new { id = subject.Id }, null)
+                    </td>
+                    <td>
+                        |
+                        @Html.ActionLink("Exams", "ShowExam", "Exam", new { id = subject.Id }, null)
+                    </td>
+                    <td>
+                        |
+                        @Html.ActionLink("Grade Averages", "ShowGradeAverage", "Exam", new { id = subject.Id }, null)
+                    </td>
+                    <td>
+                        |
+                        @Html.ActionLink("Edit", "Edit", "Subject", new { id = subject.Id }, null)
+                    </td>
+                    <td>
+                        @using (Html.BeginForm("Delete", "Subject", subject, FormMethod.Post, null))
+                        {
+                            @Html.AntiForgeryToken()
+                            <input type="submit" value="Delete" class="deleteButton"
+                                   onclick="return confirm('Should this Subject @subject.Name really get deleted?')" />
+                        }
+                    </td>
+                </tr>
+            </div>
+        </div>
+    }
+    <input class="button" type="button" value="New subject" onclick="location.href = '@Url.Action("Edit", "Subject")'" />
+</fieldset>
