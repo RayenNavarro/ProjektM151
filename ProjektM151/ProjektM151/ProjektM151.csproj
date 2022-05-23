@@ -188,9 +188,19 @@
     <Compile Include="Migrations\202205230647043_init.Designer.cs">
       <DependentUpon>202205230647043_init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205230658050_basicStructureDatabase.cs" />
+    <Compile Include="Migrations\202205230658050_basicStructureDatabase.Designer.cs">
+      <DependentUpon>202205230658050_basicStructureDatabase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\Exam.cs" />
+    <Compile Include="Models\ExamModelView.cs" />
     <Compile Include="Models\Forum.cs" />
+    <Compile Include="Models\Homework.cs" />
+    <Compile Include="Models\HomeworkViewModel.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Subject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -256,6 +266,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202205230647043_init.resx">
       <DependentUpon>202205230647043_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205230658050_basicStructureDatabase.resx">
+      <DependentUpon>202205230658050_basicStructureDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fluent.Infrastructure.FluentModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -12,5 +13,8 @@ namespace ProjektM151.Models
         [Required(ErrorMessage = "Bitte geben Sie einen Namen ein.")]
         public string Name { get; set; }
         public float Average { get; set; }
+        public virtual ICollection<Homework> Homework { get; set; }
+        public virtual ICollection<Exam> Exam { get; set; }
+        public ApplicationUser User { get; set; }
     }
 }
