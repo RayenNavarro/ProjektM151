@@ -14,8 +14,10 @@ namespace ProjektM151ManageWithRaamel.Controllers
         public ActionResult Index()
         {
             //Get the user from the database depending on who is logged in
-            ApplicationUser userfromDb = new ApplicationUser();
-            userfromDb = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
+
+            //ApplicationUser userfromDb = new ApplicationUser();
+            //userfromDb = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
+
             //Returns list with only subjects with same user
             List<Subject> subjects = db.Subject.ToList();
             return View(subjects);
@@ -40,16 +42,18 @@ namespace ProjektM151ManageWithRaamel.Controllers
                 { // To save the edited subject manual
                     Subject subjectFromDb = db.Subject.Find(subject.Id);
                     subjectFromDb.Name = subject.Name;
-                    subjectFromDb.User.Id = User.Identity.Name;
+
+                    //subjectFromDb.User.Id = User.Identity.Name;
                 }
                 else
                 //When adding a new subject
                 {
                     //Get the user from the database depending on who is logged in
-                    ApplicationUser userfromDb = new ApplicationUser();
-                    userfromDb = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
-                    subject.User = userfromDb;
-                    subject.User.Id = userfromDb.Id;
+
+                    //ApplicationUser userfromDb = new ApplicationUser();
+                    //userfromDb = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
+                    //subject.User = userfromDb;
+                    //subject.User.Id = userfromDb.Id;
                     db.Subject.Add(subject);
                 }
                 db.SaveChanges();

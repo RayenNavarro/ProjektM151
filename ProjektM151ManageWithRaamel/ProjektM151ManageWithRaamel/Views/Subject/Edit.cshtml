@@ -1,0 +1,31 @@
+﻿@model ProjektM151ManageWithRaamel.Models.Subject
+@if (Model != null)
+{
+    <h2>Edit Subject</h2>
+}
+else
+{
+    <h2>Create Subject</h2>
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    <fieldset>
+        <div class="title"> Subject <hr /> </div>
+        @if (Model != null)
+        {@Html.HiddenFor(model => model.Id)}
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+        </div>
+        <p>
+            <input type="submit" value="Save" class="button" />
+        </p>
+    </fieldset>
+}
+<div>
+    @Html.ActionLink("Go back", "Index", "Subject")
+</div>
