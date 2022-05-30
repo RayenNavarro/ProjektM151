@@ -1,0 +1,106 @@
+﻿@model List<ProjektM151ManageWithRaamel.Models.Homework>
+
+<h2>Hausaufgaben</h2>
+
+<fieldset>
+    <div class="title">
+        <th>
+            List
+        </th>
+        <hr />
+    </div>
+    <div class="view">
+        <div class="beschreibung">
+            <h4>To Do:</h4>
+        </div>
+    </div>
+
+    @foreach (ProjektM151ManageWithRaamel.Models.Homework homework in Model.Where(s => s.Status == false))
+    {
+        using (ProjektM151ManageWithRaamel.Models.ApplicationDbContext db = new ProjektM151ManageWithRaamel.Models.ApplicationDbContext())
+        {
+            ProjektM151ManageWithRaamel.Models.Subject subject = new ProjektM151ManageWithRaamel.Models.Subject();
+            subject = db.Subject.FirstOrDefault(i => i.Id == homework.SubjectId);
+
+            <div class="view">
+                <div class="beschreibung">
+                    <tr>
+                        <td>
+                            Subject:
+                            @subject.Name
+                        </td>
+                        <td>
+                            | Description:
+                            @homework.Description
+                        </td>
+                        <td>
+                            | DueDate:
+                            @homework.DueDate.ToString("dd MMMM, yyyy")
+                        </td>
+                        <td>
+                            |
+                            @Html.ActionLink("Edit", "Edit", "Homework", new { id = homework.Id }, null) |
+                        </td>
+                        <td>
+
+                            @using (Html.BeginForm("Delete", "Homework", homework, FormMethod.Post, null))
+                            {
+                                @Html.AntiForgeryToken()
+                                <input type="submit" value="Delete" class="deleteButton"
+                                       onclick="return confirm('Soll die Hausaufgabe @homework.Description wirklich gelöscht werden?')" />
+                            }
+                        </td>
+                    </tr>
+                </div>
+            </div>
+        }
+    }
+    <div class="view">
+        <div class="beschreibung">
+            <h4>Completed:</h4>
+        </div>
+    </div>
+
+    @foreach (ProjektM151ManageWithRaamel.Models.Homework homework in Model.Where(s => s.Status == true))
+    {
+        using (ProjektM151ManageWithRaamel.Models.ApplicationDbContext db = new ProjektM151ManageWithRaamel.Models.ApplicationDbContext())
+        {
+            ProjektM151ManageWithRaamel.Models.Subject subject = new ProjektM151ManageWithRaamel.Models.Subject();
+            subject = db.Subject.FirstOrDefault(i => i.Id == homework.SubjectId);
+
+            <div class="view">
+                <div class="beschreibung">
+                    <tr>
+                        <td>
+                            Subject:
+                            @subject.Name
+                        </td>
+                        <td>
+                            | Description:
+                            @homework.Description
+                        </td>
+                        <td>
+                            | DueDate:
+                            @homework.DueDate.ToString("dd MMMM, yyyy")
+                        </td>
+                        <td>
+                            |
+                            @Html.ActionLink("Edit", "Edit", "Homework", new { id = homework.Id }, null) |
+                        </td>
+                        <td>
+
+                            @using (Html.BeginForm("Delete", "Homework", homework, FormMethod.Post, null))
+                            {
+                                @Html.AntiForgeryToken()
+                                <input type="submit" value="Delete" class="deleteButton"
+                                       onclick="return confirm('Soll die Hausaufgabe @homework.Description wirklich gelöscht werden?')" />
+                            }
+                        </td>
+                    </tr>
+                </div>
+            </div>
+        }
+    }
+    <input class="button" type="button" value="New Homework" onclick="location.href = '@Url.Action("Edit", "Homework")'" />
+
+</fieldset>

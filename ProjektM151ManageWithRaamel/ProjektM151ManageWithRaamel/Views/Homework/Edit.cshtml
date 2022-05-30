@@ -1,0 +1,66 @@
+﻿
+@model ProjektM151ManageWithRaamel.Models.HomeworkViewModel
+@if (Model != null)
+{
+    <h2> Edit Homework</h2>
+}
+else
+{
+    <h2>Create Homework</h2>
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+<fieldset>
+    <div class="title"> Homework <hr /></div>
+    @if (Model != null)
+    {@Html.HiddenFor(model => model.Id)}
+    <div class="editor-label">
+        Description
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Description)
+    </div>
+    <div class="editor-label">
+        DueDate
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.DueDate, new { type = "date", value = Model.DueDate.ToString("dd-mm-yyyy") })
+    </div>
+    <div class="editor-label">
+        Semester
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.Semester, new { type = "number", min = "1", max = "8" })
+    </div>
+    <div class="editor-label">
+        Done
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Status)
+    </div>
+
+    <select id="SubjectId" name="SubjectId">
+        @if (Model.SubjectId <= 0)
+        {
+            <option value="">Bitte wählen...</option>
+        }
+        @foreach (ProjektM151ManageWithRaamel.Models.Subject subject in Model.AllSubjects)
+        {
+            <option value="@subject.Id"
+                    @Html.Raw((subject.Id == Model.SubjectId) ? "selected=\"selected\"" : "")>
+                @subject.Name
+            </option>
+        }
+    </select>
+
+    @Html.ValidationMessageFor(model => model.SubjectId)
+    <p>
+        <input type="submit" value="Save" class="button" />
+    </p>
+</fieldset>
+}
+<div>
+    @Html.ActionLink("Go back", "HomeworkView", "Homework")
+</div>

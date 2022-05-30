@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ProjektM151ManageWithRaamel.Models.Homework>
+<fieldset>
+    <div class="title">
+        <tr>
+            <th>
+                List
+            </th>
+        </tr>
+    </div>
+    @foreach (ProjektM151ManageWithRaamel.Models.Homework homework in Model)
+    {
+        <div class="view">
+            <div class="beschreibung">
+                <tr>
+                    <td>
+                        Description:
+                        @homework.Description
+                    </td>
+                    <td>
+                        | Due Date:
+                        @homework.DueDate.ToString("dd MMMM, yyyy")
+                    </td>
+                    <td>
+                        | Status:
+                        @homework.Status
+                    </td>
+                    <td>
+                        | Semester:
+                        @homework.Semester
+                    </td>
+                </tr>
+            </div>
+        </div>
+    }
+</fieldset>
+@Html.ActionLink("Go back", "Index", "Subject")
