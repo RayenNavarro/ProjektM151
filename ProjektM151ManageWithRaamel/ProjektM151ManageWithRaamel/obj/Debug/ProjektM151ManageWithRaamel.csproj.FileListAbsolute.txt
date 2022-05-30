@@ -103,3 +103,9 @@ D:\M151\ProjektM151\ProjektM151ManageWithRaamel\ProjektM151ManageWithRaamel\obj\
 D:\M151\ProjektM151\ProjektM151ManageWithRaamel\ProjektM151ManageWithRaamel\obj\Debug\ProjektM151ManageWithRaamel.pdb
 D:\M151\ProjektM151\ProjektM151ManageWithRaamel\ProjektM151ManageWithRaamel\obj\Debug\ProjektM151ManageWithRaamel.Migrations.init.resources
 D:\M151\ProjektM151\ProjektM151ManageWithRaamel\ProjektM151ManageWithRaamel\obj\Debug\ProjektM151ManageWithRaamel.csproj.GenerateResource.cache
+C:\Users\amand\Documents\Schule GIBZ\M151\ProjektM151\ProjektM151ManageWithRaamel\ProjektM151ManageWithRaamel\obj\Debug\ProjektM151ManageWithRaamel.csprojAssemblyReference.cache
+C:\Users\amand\Documents\Schule GIBZ\M151\ProjektM151\ProjektM151ManageWithRaamel\ProjektM151ManageWithRaamel\obj\Debug\ProjektM151ManageWithRaamel.Migrations.init.resources
+C:\Users\amand\Documents\Schule GIBZ\M151\ProjektM151\ProjektM151ManageWithRaamel\ProjektM151ManageWithRaamel\obj\Debug\ProjektM151ManageWithRaamel.csproj.GenerateResource.cache
+C:\Users\amand\Documents\Schule GIBZ\M151\ProjektM151\ProjektM151ManageWithRaamel\ProjektM151ManageWithRaamel\obj\Debug\ProjektM151ManageWithRaamel.csproj.CoreCompileInputs.cache
+C:\Users\amand\Documents\Schule GIBZ\M151\ProjektM151\ProjektM151ManageWithRaamel\ProjektM151ManageWithRaamel\obj\Debug\ProjektM151ManageWithRaamel.dll
+C:\Users\amand\Documents\Schule GIBZ\M151\ProjektM151\ProjektM151ManageWithRaamel\ProjektM151ManageWithRaamel\obj\Debug\ProjektM151ManageWithRaamel.pdb
