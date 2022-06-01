@@ -1,11 +1,9 @@
 ﻿@model List<ProjektM151ManageWithRaamel.Models.Subject>
-<h2>Fächer</h2>
+<h2>Subject</h2>
 
 <fieldset>
     <tr>
         <div class="title">
-
-            List <hr />
         </div>
     </tr>
     @foreach (ProjektM151ManageWithRaamel.Models.Subject subject in Model)
@@ -23,7 +21,7 @@
                     </td>
                     <td>
                         |
-                        @Html.ActionLink("Exams", "ShowExam", "Exam", new { id = subject.Id }, null)
+                        @Html.ActionLink("Grade", "ShowExam", "Exam", new { id = subject.Id }, null)
                     </td>
                     <td>
                         |

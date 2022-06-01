@@ -1,0 +1,32 @@
+﻿@model IEnumerable<ProjektM151ManageWithRaamel.Models.Exam>
+<fieldset>
+    @foreach (ProjektM151ManageWithRaamel.Models.Exam exam in Model)
+    {
+        <div class="view">
+            <div class="beschreibung">
+                <tr>
+                    <td>
+                        Description:
+                        @exam.Description
+                    </td>
+                    <td>
+                        | Grade:
+                        @exam.Grade
+                    </td>
+                    <td>
+                        | Date:
+                        @exam.Examdate.ToString("dd MMMM, yyyy")
+                    </td>
+                    <td>
+                        | Semester:
+                        @exam.Semester
+                    </td>
+                    <td>
+                        | Weighting:
+                        @exam.GradesIndex
+                    </td>
+                </tr>
+            </div>
+        </div>
+    }
+</fieldset>
