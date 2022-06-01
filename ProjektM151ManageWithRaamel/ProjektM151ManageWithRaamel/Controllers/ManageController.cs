@@ -1,12 +1,10 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using ProjektM151ManageWithRaamel.App_Start;
 using ProjektM151ManageWithRaamel.Models;
 
 namespace ProjektM151ManageWithRaamel.Controllers
@@ -296,7 +294,8 @@ namespace ProjektM151ManageWithRaamel.Controllers
             return View(new ManageLoginsViewModel
             {
                 CurrentLogins = userLogins,
-                OtherLogins = otherLogins
+                OtherLogins = (System.Collections.Generic.IList<Microsoft.AspNetCore.Http.Authentication.AuthenticationDescription>)otherLogins
+                //OtherLogins = otherLogins
             });
         }
 
