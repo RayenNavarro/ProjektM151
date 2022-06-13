@@ -61,12 +61,8 @@ namespace ProjektM151ManageWithRaamel.Controllers
         public ActionResult ShowAllGradeAverage()
         {
             List<Subject> model = new List<Subject>();
-            //Get the user from the database depending on who is logged in
-            ApplicationUser userfromDb = new ApplicationUser();
-            userfromDb = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
-            //List with exams with same subject and same user.
-            List<Subject> subject = db.Subject.Where(s => s.User.Id == userfromDb.Id).ToList();
-            foreach (Subject asubject in subject)
+            List<Subject> subjects = db.Subject.ToList();
+            foreach (Subject asubject in subjects)
             {
                 float average = 0;
                 float counter = 0;
@@ -83,7 +79,7 @@ namespace ProjektM151ManageWithRaamel.Controllers
                         counter += aexam.GradesIndex;
                     }
                     asubject.Average = average / counter;
-                    Subject sub = db.Subject.FirstOrDefault(s => s.Id == asubject.Id && s.User.Id == userfromDb.Id);
+                    Subject sub = db.Subject.FirstOrDefault(s => s.Id == asubject.Id);
                     sub.Average = asubject.Average;
                     db.SaveChanges();
                 }
