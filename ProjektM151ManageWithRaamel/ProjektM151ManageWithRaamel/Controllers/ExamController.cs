@@ -160,34 +160,24 @@ namespace ProjektM151ManageWithRaamel.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Exam exam)
         {
-            if (ModelState.IsValid)
-            {
-                //only edited
-                if (exam.Id > 0)
-                { //The exam object is getting manual reassigned that it can be saved modified.
-                    Exam examFromDb = db.Exam.Find(exam.Id);
-                    examFromDb.Description = exam.Description;
-                    examFromDb.Grade = exam.Grade;
-                    examFromDb.Examdate = exam.Examdate;
-                    examFromDb.Semester = exam.Semester;
-                    examFromDb.GradesIndex = exam.GradesIndex;
-                    examFromDb.SubjectId = exam.SubjectId;
-
-                }
-                //Created a new exam
-                else
-                {
-                    //Get the user from the database depending on who is logged in
-                    ApplicationUser userfromDb = new ApplicationUser();
-                    userfromDb = db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
-                    exam.User = userfromDb;
-                    exam.User.Id = userfromDb.Id;
-                    db.Exam.Add(exam);
-                }
-                db.SaveChanges();
-                return RedirectToAction("ExamView", "Exam");
+            //only edited
+            if (exam.Id > 0)
+            { //The exam object is getting manual reassigned that it can be saved modified.
+                Exam examFromDb = db.Exam.Find(exam.Id);
+                examFromDb.Description = exam.Description;
+                examFromDb.Grade = exam.Grade;
+                examFromDb.Examdate = exam.Examdate;
+                examFromDb.Semester = exam.Semester;
+                examFromDb.GradesIndex = exam.GradesIndex;
+                examFromDb.SubjectId = exam.SubjectId;
             }
-            return View(exam);
+            //Created a new exam
+            else
+            {
+                db.Exam.Add(exam);
+            }
+            db.SaveChanges();
+            return RedirectToAction("ExamView", "Exam");
         }
         /// <summary>
         /// When pressing the delete button, the exam will be removed from the database

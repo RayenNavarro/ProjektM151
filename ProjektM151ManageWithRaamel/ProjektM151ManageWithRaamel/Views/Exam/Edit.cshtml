@@ -1,6 +1,6 @@
 ﻿
 @model ProjektM151ManageWithRaamel.Models.ExamModelView
-@if (Model != null)
+@if (Model.Description != null)
 {
     <h2> Edit Exam </h2>
 }
@@ -13,7 +13,7 @@ else
     @Html.AntiForgeryToken()
     @Html.ValidationSummary()
     <fieldset>
-        <div class="title"> Grade<hr /> </div>
+        <div class="title"></div>
         @if (Model != null)
         {@Html.HiddenFor(model => model.Id)}
         <div class="editor-label">

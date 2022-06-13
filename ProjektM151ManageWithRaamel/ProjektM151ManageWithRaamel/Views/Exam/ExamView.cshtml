@@ -14,15 +14,8 @@
     <option value="0">Show all</option>
 </select>
 <fieldset>
-    <div class="title">
-        <td>
 
-            Auflistung
-        </td>
-        <hr />
-    </div>
-
-    @foreach (manage_it.Models.Exam exam in Model)
+    @foreach (ProjektM151ManageWithRaamel.Models.Exam exam in Model)
     {
         <tr>
             <div class="view">
