@@ -1,0 +1,34 @@
+﻿
+@model List<ProjektM151ManageWithRaamel.Models.Subject>
+
+<h2>Average of grades</h2>
+
+<fieldset>
+    <div class="title">
+        <td>
+            List
+            <hr />
+        </td>
+
+    </div>
+    @foreach (ProjektM151ManageWithRaamel.Models.Subject subject in Model)
+    {
+        <div class="view">
+            <div class="beschreibung">
+                <tr>
+                    <td>
+                        Subject:
+                        @subject.Name
+
+                    </td>
+                    <td>
+                        | Grade:
+                        @subject.Average
+                    </td>
+
+                </tr>
+            </div>
+        </div>
+
+    }
+</fieldset>
