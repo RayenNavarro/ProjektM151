@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: #222222;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +22,114 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+}
+
+fieldset {
+    background-color: #141414;
+    padding: 5px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px 10px #141414;
+}
+
+
+.title {
+    font-size: 25px;
+    padding-bottom: 5px;
+    color: white;
+    text-align: center;
+}
+
+
+.button {
+    background-color: transparent;
+    border-width: 3px;
+    border-radius: 35px;
+    border-color: green;
+    padding: 5px;
+    width: 500px;
+    margin-top: 10px;
+    font-size: 20px;
+    color: green;
+    transition: 0.5s;
+}
+
+    .button:hover {
+        background-color: green;
+        border-width: 3px;
+        border-radius: 35px;
+        border-color: transparent;
+        padding: 5px;
+        width: 500px;
+        margin-top: 10px;
+        font-size: 20px;
+        color: white;
+        transition: 0.5s;
+    }
+
+.deleteButton {
+    background-color: transparent;
+    border-width: 3px;
+    border-radius: 35px;
+    border-color: red;
+    padding: 5px;
+    width: 150px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    font-size: 20px;
+    color: red;
+    transition: 0.5s;
+}
+
+    .deleteButton:hover {
+        background-color: red;
+        border-width: 3px;
+        border-radius: 35px;
+        border-color: transparent;
+        padding: 5px;
+        width: 150px;
+        margin-top: 10px;
+        margin-bottom: 50px;
+        font-size: 20px;
+        color: white;
+        transition: 0.5s;
+    }
+
+.editor-label {
+    color: white;
+    font-size: 20px;
+}
+
+input {
+    width: 500px;
+    border-width: 3px;
+    border-radius: 35px;
+    border-color: white;
+    padding: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    text-align: center;
+}
+
+table {
+    background-color: black;
+    padding: 5px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.view {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.beschreibung {
+    color: white;
 }
