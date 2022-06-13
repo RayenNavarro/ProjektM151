@@ -22,7 +22,9 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Subject", "Index", "Subject")</li>
                     <li>@Html.ActionLink("Homeworks", "HomeworkView", "Homework")</li>
+                    <li>@Html.ActionLink("Exams", "ExamView", "Exam", new { semester = 0 }, null)</li>
                     <li>@Html.ActionLink("Average Grades", "ShowAllGradeAverage", "Exam")</li>
+
 
                 </ul>
             </div>

@@ -157,6 +157,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ExamController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomeworkController.cs" />
     <Compile Include="Controllers\SubjectController.cs" />
@@ -220,6 +221,9 @@
     <Content Include="Views\Homework\HomeworkView.cshtml" />
     <Content Include="Views\Homework\ShowHomework.cshtml" />
     <Content Include="Views\Homework\Edit.cshtml" />
+    <Content Include="Views\Exam\ExamView.cshtml" />
+    <Content Include="Views\Exam\Edit.cshtml" />
+    <Content Include="Views\Exam\ShowExam.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

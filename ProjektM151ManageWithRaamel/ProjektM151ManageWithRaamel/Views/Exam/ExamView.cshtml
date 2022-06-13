@@ -1,0 +1,72 @@
+﻿@model List<ProjektM151ManageWithRaamel.Models.Exam>
+
+<h2>Grades</h2>
+<select class="form-control" id="SelectSemester" name="NumberOfSemester" style="background-color:black;color:white; " onchange="document.location.href = '/Exam/ExamView?semester=' + this.options[this.selectedIndex].value;">
+    <option value="0">Select the semester</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="0">Show all</option>
+</select>
+<fieldset>
+
+    @foreach (ProjektM151ManageWithRaamel.Models.Exam exam in Model)
+    {
+        <tr>
+            <div class="view">
+                <div class="beschreibung">
+                    Description:
+
+                    <td>
+                        @exam.Description
+                    </td>
+
+
+
+                    | Grade:
+                    <td>
+                        @exam.Grade
+                    </td>
+
+
+                    | Date:
+                    <td>
+                        @exam.Examdate
+                    </td>
+
+                    | Semester:
+                    <td>
+                        @exam.Semester
+                    </td>
+
+                    | Weighting:
+                    <td>
+                        @exam.GradesIndex
+                    </td>
+
+                    <td>
+                        |
+                        @Html.ActionLink("Edit", "Edit", "Exam", new { id = exam.Id }, null) |
+                    </td>
+                </div>
+            </div>
+            <td>
+                @using (Html.BeginForm("Delete", "Exam", exam, FormMethod.Post, null))
+                {
+                    @Html.AntiForgeryToken()
+                    <input type="submit" value="Delete" class="deleteButton"
+                           onclick="return confirm('Should the exam @exam.Description get deleted?')" />
+                }
+            </td>
+        </tr>
+
+
+
+    }
+    <input class="button" type="button" value="New Exam" onclick="location.href = '@Url.Action("Edit", "Exam")'" />
+</fieldset>
